@@ -58,4 +58,32 @@ vector2
 
   i1
   i2
+
+# Hebbian learning  
+
+  target1 <- sign(rnorm(features))
+  target2 <- sign(rnorm(features))
+  cue1 <- sign(rnorm(features))
+  cue2 <- sign(rnorm(features))
   
+  target1[target1 == -1] <- 0
+  target2[target2 == -1] <- 0
+  cue1[cue1 == -1] <- 0
+  cue2[cue2 == -1] <- 0
+  
+  target1
+  target2
+  cue1
+  cue2
+
+  target1 %o% cue1
+  target2 %o% cue2  
+  
+  w <- target1 %o% cue1 + target2 %o% cue2  
+  w
+
+  w %*% cue1
+  w %*% cue2
+  
+  cue1 %*% w
+  cue2 %*% w
